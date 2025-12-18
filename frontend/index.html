@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Smart Debt Optimizer</title></head>
+<body>
+<h1>Smart Debt Optimizer</h1>
+<button onclick="optimize()">Optimize Debt</button>
+<pre id="result"></pre>
+<script>
+function optimize(){
+  fetch('/optimize/').then(r=>r.json()).then(data=>{
+    document.getElementById('result').textContent=JSON.stringify(data, null, 2);
+  });
+}
+</script>
+</body>
+</html>
